@@ -1,3 +1,6 @@
+use std::collections::HashMap;
+
+pub type Inventory = HashMap<ItemType, Item>;
 
 pub enum ItemType {
 
@@ -11,7 +14,7 @@ pub enum ItemType {
 pub struct Item {
 
     r#type: ItemType,
-    count: usize,
+    count: isize,
     consumable: bool,
 
 }
