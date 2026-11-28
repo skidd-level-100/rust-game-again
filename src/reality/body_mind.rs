@@ -16,16 +16,11 @@ pub struct Npc {
     pub texture: Option<char>, // renders this emoji in 2d rendering
     brain: Brain,
     body: Object,
-    action: Action,
     facing: Direction
 
 }
 
 impl Npc {
-
-    pub fn choose_action(&mut self){
-        todo!("Npcs cant do actions yet"); 
-    }
 
 }
 
