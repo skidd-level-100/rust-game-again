@@ -5,11 +5,12 @@ use crate::reality::physical::MultipleObjects;
 
 use std::collections::HashMap;
 
-pub type DimensionalPlain = HashMap<Location, MultipleObjects>;
+pub type DimensionalPlane = HashMap<Location, MultipleObjects>;
 pub type Destination = isize; // should hold the Area id (placement in world vector)
 
-type NpcTrasitWait = Vec<NpcInTransit>;
+type NpcTransitWait = Vec<NpcInTransit>;
 
+#[derive(Clone, PartialEq, Eq, Hash)]
 pub struct Location {
     x: isize,
     y: isize
@@ -27,14 +28,14 @@ pub enum Direction {
 
 pub struct Area {
 
-    plain: DimensionalPlain, // holds MultipleObjects at Location 
+    plain: DimensionalPlane, // holds MultipleObjects at Location 
     
     max_distance: Location,
     max_npcs: isize,
     
     npcs: MultipleNpcs,
     
-    npcs_output_transit: NpcTrasitWait, // hopefully ill end up implementing multithreading and these will come in handy.
+    npcs_output_transit: NpcTransitWait, // hopefully ill end up implementing multithreading and these will come in handy.
     npcs_input_next: MultipleNpcs,
     
 }
