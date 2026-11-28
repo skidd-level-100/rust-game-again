@@ -28,7 +28,7 @@ pub enum Direction {
 
 pub struct Area {
 
-    plain: DimensionalPlane, // holds MultipleObjects at Location 
+    plane: DimensionalPlane, // holds MultipleObjects at Location 
     
     max_distance: Location,
     max_npcs: isize,
